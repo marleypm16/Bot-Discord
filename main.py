@@ -32,6 +32,9 @@ class MyClient(discord.Client):
         if message.content.startswith('$qual seu nome?'):
             await message.channel.send("joaozin delas")
 
+        if message.content.startswith('$good day'):
+            await message.channel.send('https://www.albinoblacksheep.com/flash/kikia')
+
 intents = discord.Intents.default()
 intents.messages = True
 
