@@ -1,11 +1,13 @@
 import discord
+import os
+from config import TOKEN
 
 class MyClient(discord.Client):
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
 
-    async def on_message(self,message):
-        if message.author == client.user:
+    async def on_message(self, message):
+        if message.author == self.user:
             return
 
         if message.content.startswith('$hello'):
@@ -15,7 +17,7 @@ class MyClient(discord.Client):
             await message.channel.send("joaozin delas")
 
 intents = discord.Intents.default()
-intents.message_content = True
+intents.messages = True
 
 client = MyClient(intents=intents)
-client.run('MTE5NDQyMzczODUwMzAyNDc1MA.GXcQvJ.x42OanmPNBmeQdY2BK7F4A_BxwT8NXSlUAvI_4')
+client.run(TOKEN)
